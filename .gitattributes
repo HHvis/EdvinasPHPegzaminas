@@ -1,13 +1,12 @@
 * text=auto
+* linguist-vendored
+*.js linguist-vendored=false
 
 *.blade.php diff=html
+*.css diff=css
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
-*.css linguist-detectable=false
-*.js linguist-detectable=true
-*.java linguist-detectable=false
-
 
 /.github export-ignore
 CHANGELOG.md export-ignore
