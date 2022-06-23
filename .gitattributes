@@ -4,9 +4,9 @@
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
-mvnw.cmd linguist-generated=true
-mvnw linguist-generated=true
-
+*.css linguist-detectable=false
+*.js linguist-detectable=true
+*.java linguist-detectable=false
 
 
 /.github export-ignore
