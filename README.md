@@ -48,7 +48,7 @@ php artisan key:generate
 php artisan db
 create database laravel
 ```
-5. Reikalingos migracijos:
+5. Reikalingos migracijos jei nenaudojate SQL file:
 ```
 php artisan migrate:fresh
 ```
