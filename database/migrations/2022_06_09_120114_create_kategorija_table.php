@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMeniuTable extends Migration
+class CreatekategorijaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateMeniuTable extends Migration
      */
     public function up()
     {
-        Schema::create('meniu', function (Blueprint $table) {
+        Schema::create('kategorija', function (Blueprint $table) {
             $table->id();
             $table->string('pavadinimas');
-            $table->unsignedBigInteger('maitinimo_istaigos_id');
-            $table->foreign('maitinimo_istaigos_id')->references('id')->on('istaigos')->onDelete('cascade');
+            $table->unsignedBigInteger('knygu_istaigos_id');
+            $table->foreign('knygu_istaigos_id')->references('id')->on('istaigos')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateMeniuTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meniu');
+        Schema::dropIfExists('kategorija');
     }
 }

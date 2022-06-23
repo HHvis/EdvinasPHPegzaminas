@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Istaiga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-class istaigaController extends Controller
+class IstaigaController extends Controller
 {
 
     public function __construct() {
@@ -13,24 +13,24 @@ class istaigaController extends Controller
 
     public function store(Request $request)
     {
-        $ist = new istaiga;
+        $ist = new Istaiga;
         $ist->pavadinimas = $request->input('pavadinimas');
         $ist->kodas = $request->input('kodas');
         $ist->adresas = $request->input('adresas');
 
         if(empty($request->input('pavadinimas'))) 
         {
-            return redirect()->back()->with('pavadinimas-failure','Įveskite įstaigos pavadinimą.');
+            return redirect()->back()->with('pavadinimas-failure','Įveskite knygyno pavadinimą.');
         }
 
         if(empty($request->input('kodas'))) 
         {
-            return redirect()->back()->with('kodas-failure','Įveskite maitinimo įstaigos kodą.');
+            return redirect()->back()->with('kodas-failure','Įveskite knygyno kodą.');
         }
 
         if(empty($request->input('adresas'))) 
         {
-            return redirect()->back()->with('adresas-failure','Įveskite maitinimo įstaigos adresą.');
+            return redirect()->back()->with('adresas-failure','Įveskite knygyno adresą.');
         }
 
         if($request->hasfile('nuotrauka'))
@@ -45,7 +45,7 @@ class istaigaController extends Controller
         }
 
         $ist->save();
-        return redirect()->back()->with('status','Maitinimo įstaiga pateikta');
+        return redirect()->back()->with('status','Knygynas pateiktas');
     }
 
     public function edit($id)
@@ -64,17 +64,17 @@ class istaigaController extends Controller
 
         if(empty($request->input('pavadinimas'))) 
         {
-            return redirect()->back()->with('pavadinimas-failure','Įveskite maitinimo įstaigos pavadinimą.');
+            return redirect()->back()->with('pavadinimas-failure','Įveskite knygyno pavadinimą.');
         }
 
         if(empty($request->input('kodas'))) 
         {
-            return redirect()->back()->with('kodas-failure','Įveskite maitinimo įstaigos kodą.');
+            return redirect()->back()->with('kodas-failure','Įveskite knygyno kodą.');
         }
 
         if(empty($request->input('adresas'))) 
         {
-            return redirect()->back()->with('adresas-failure','Įveskite maitinimo įstaigos adresą.');
+            return redirect()->back()->with('adresas-failure','Įveskite knygyno adresą.');
         }
 
         if($request->hasfile('nuotrauka'))
@@ -91,7 +91,7 @@ class istaigaController extends Controller
         }
 
         $ist->update();
-        return redirect()->back()->with('status','Įstaiga atnaujinta');
+        return redirect()->back()->with('status','Knygynas atnaujintas');
     }
 
 
@@ -103,6 +103,6 @@ class istaigaController extends Controller
             File::delete($destination);
         }
         $ist->delete();
-        return redirect()->back()->with('status','Maitinimo įstaiga pašalinta');
+        return redirect()->back()->with('status','Knygynas pašalintas');
     }
 }

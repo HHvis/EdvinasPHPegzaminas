@@ -11,15 +11,15 @@ class Uzsakymas extends Model
 
     protected $table = "uzsakymai";
     protected $fillable = [
-        'patiekalo_id',
+        'knygos_id',
         'kiekis',
         'vartotojo_id',
         'busena',
     ];
 
-    public function patiekalas()
+    public function knyga()
     {
-        return $this->belongsTo('App\Models\Patiekalas');
+        return $this->belongsTo('App\Models\knyga');
     }
 
 }

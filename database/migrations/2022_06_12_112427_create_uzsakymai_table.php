@@ -15,8 +15,8 @@ class CreateUzsakymaiTable extends Migration
     {
         Schema::create('uzsakymai', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('patiekalo_id');
-            $table->foreign('patiekalo_id')->references('id')->on('patiekalai')->onDelete('cascade');
+            $table->unsignedBigInteger('knygos_id');
+            $table->foreign('knygos_id')->references('id')->on('knygos')->onDelete('cascade');
             $table->integer('kiekis');
             $table->unsignedBigInteger('vartotojo_id');
             $table->foreign('vartotojo_id')->references('id')->on('users')->onDelete('cascade');

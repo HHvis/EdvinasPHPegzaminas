@@ -1,9 +1,23 @@
-body{
-background-image: url("https://i0.wp.com/css-tricks.com/wp-content/uploads/2018/11/Untitled_Artwork-scaled.jpg?fit=2560%2C1071&ssl=1");
-}
+body{ margin: 0; padding: 0; }
+
+/* body { 
+    background: url('https://img.freepik.com/free-vector/open-book-isolated_1284-43075.jpg?w=2000') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
 
 #box1{
     background-color: rgba(197, 153, 143, 0.608);
 }
 
 
+header {
+    background-color: rgb(255, 208, 0);
+}
+
+
+footer {
+    background-color: rgb(255, 208, 0);
+}

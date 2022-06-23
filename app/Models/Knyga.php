@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Meniu extends Model
+class Knyga extends Model
 {
     use HasFactory;
 
-    protected $table = "meniu";
+    protected $table = "knygos";
     protected $fillable = [
-        'pavadinimas',
-        'maitinimo_istaigos_id',
+        'knygos_pavadinimas',
+        'knygos_kaina',
+        'knygos_aprasymas',
+        'kategorija_id',
     ];
 }
-

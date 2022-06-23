@@ -6,7 +6,7 @@ use App\Models\Istaiga;
 class viewIstaigos extends Controller
 {
     public function istaigos(){
-        $istaig = istaiga::all();
-        return view('pagrindinis', compact('istaig'));
+        $knygynas = Istaiga::all();
+        return view('pagrindinis', compact('knygynas'));
       }
 }

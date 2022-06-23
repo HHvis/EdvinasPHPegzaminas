@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Uzsakymas;
 use Illuminate\Http\Request;
-use App\Models\patiekalas;
+use App\Models\knyga;
 use Illuminate\Support\Facades\Auth;
 
 class uzsakymasController extends Controller
@@ -15,22 +15,22 @@ class uzsakymasController extends Controller
 
     public function storeUzsakymas(Request $request, $id)
     {
-        $pat = patiekalas::findOrFail($id);
+        $kny = knyga::findOrFail($id);
 
         $uzsak = new Uzsakymas();
 
-        $uzsak->patiekalo_id = $pat->id;
+        $uzsak->knygos_id = $kny->id;
         $uzsak->kiekis = $request->input('kiekis');
         $uzsak->vartotojo_id = Auth::id();
 
         if(empty($request->input('kiekis'))) 
         {
-            return redirect()->back()->with('patiekalo-kiekis-failure','Įveskite patiekalo kieki.');
+            return redirect()->back()->with('knygos-kiekis-failure','Įveskite knygos kiekį.');
         }
 
 
         $uzsak->save();
-        return redirect()->back()->with('uzsakymas-status','Patiekalas užsakytas.');
+        return redirect()->back()->with('uzsakymas-status','Knyga užsakyta.');
     }
 
     public function uzsakymai()

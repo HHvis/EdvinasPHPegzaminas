@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+<!-- Vartotojo paskyra -->
 <div class="container">
     <div class="row">
         <div class="col-lg-12 col-sm-12 col 12 my-4">
@@ -26,9 +28,9 @@
                         @foreach ($uzsak as $uzsakymas)
                         <tr>
                             <td class="text-center">{{$uzsakymas->created_at}}</td>
-                            <td class="text-center">{{\App\Models\patiekalas::find($uzsakymas->patiekalo_id)->patiekalo_pavadinimas}}</td>
+                            <td class="text-center">{{\App\Models\knyga::find($uzsakymas->knygos_id)->knygos_pavadinimas}}</td>
                             <td class="text-center">{{$uzsakymas->kiekis}}</td>
-                            <td class="text-center">{{\App\Models\patiekalas::find($uzsakymas->patiekalo_id)->patiekalo_kaina}}</td>
+                            <td class="text-center">{{\App\Models\knyga::find($uzsakymas->knygos_id)->knygos_kaina}}</td>
                             <td class="text-center">{{ucwords($uzsakymas->busena)}}</td>
                         </tr>
                         @endforeach

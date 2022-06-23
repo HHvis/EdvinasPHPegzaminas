@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\vartotojas;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\istaiga;
 
 class DashboardController extends Controller
 {
