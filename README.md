@@ -9,6 +9,23 @@
   <li>Composer xx</li>
 </ul> 
 
+<h2>Paskyros</h2>
+<p>Admin</p>
+
+```
+admin@gmail.com
+```
+```
+admin123
+```
+<p>Skaitytojas</p>
+```
+labas@gmail.com
+```
+```
+labas123
+```
+
 <h2 align="center">PROJEKTO PALEIDIMAS</h2>
 
 1. Terminale klonuokite projektą:
