@@ -25,7 +25,7 @@ composer update
 cp .env.example .env
 php artisan key:generate
 ```
-4. Terminale susikurkite duombazę, pavadinimu 'egzaminas':
+4. Terminale susikurkite duombazę, pavadinimu 'egzaminas' ir ikelkite SQL file i ja:
 ```
 php artisan db
 create database laravel
